@@ -62,6 +62,10 @@ const ExpenseForm = (props) => {
         });
 
     }
+
+    const cancelAddExpenseFormHandler = () => {
+        props.onHideExpenseForm(true);
+    }
     return <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
@@ -78,6 +82,7 @@ const ExpenseForm = (props) => {
             </div>
         </div>
         <div className="new-expense__actions">
+            <button onClick={cancelAddExpenseFormHandler} type="button">Cancel</button>
             <button type="submit">Add Expense</button>
         </div>
     </form>;
